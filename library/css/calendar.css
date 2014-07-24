@@ -1,0 +1,112 @@
+.row{
+  border: 2px dashed black;
+}
+.col-xs-9{
+  border: 1px dashed red;
+  background: #c8f8c8;  
+}
+.hour-marker{
+  vertical-align: middle;
+  height: 15px;
+}
+.dur-quarter{
+  height: 15px;
+}
+.dur-half{
+  height: 30px;
+  z-index: 1;
+}
+.dur-half-quarter{
+  height: 45px;
+}
+.dur-one{
+  height: 60px;
+}
+.col-lg-3{
+  z-index: 1;
+}
+.col-lg-1{
+  border: 1px dashed red;
+  background: #a2d4d2;
+}
+.h-quarter{
+  height: 15px;
+  background: blue;
+}
+.pref{
+  z-index: 2;
+}
+div .event{
+  border-radius: 5px;
+  padding-left: 8px;
+}
+div .event.green{
+  border: rgb(103, 200, 72) solid 1px;
+  background: rgb(123, 209, 72)
+}
+div .event.orange{
+  border: rgb(205, 170, 0) solid 1px;
+  background: rgb(255, 173, 70);
+}
+div .event-name{
+  word-wrap: break-word;
+  font: 1.2em Arial,sans-serif;
+}
+div .event-time{
+  font: bold 0.825em Arial,sans-serif;
+}
+div .event:hover{
+  -webkit-transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -ms-transition: opacity .25s ease-in-out;
+  -o-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.event-popover-title{
+  font: 1.2em Arial, 'Bebas Neue', Impact, Charcoal, sans-serif;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url(http://link-to-your/image.jpg) no-repeat;
+  }
+.circular img {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  }
+  .popover-inner-content{
+    white-space: nowrap;
+   min-width: 300px;
+  }
+  .popover-img{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;1
+  }
+  .popover-info{
+    padding-top: 5px;
+  }
+
+  .unavailable{
+    position: absolute;
+    height: 900px;
+    background: rgba(0,0,0,0.85);
+    color: #ffffff;
+    font: 5em 'Bebas Neue', Impact, Charcoal, Arial, sans-serif;
+    z-index: 999999;
+    border-radius: 8px;
+  }
+
+  .unavailable p{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 6.5em;
+  }

@@ -1,0 +1,443 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header{
+	height: 250px;
+	background: black;
+
+	#header-container{
+		height: 100%;
+		background: url(../images/mask.png) no-repeat center;
+		#header-logo{
+			.boxShadow(3px,3px,5px,0,rgba(0,0,0,0.5));
+			background: white;
+			height: 175px; 
+		
+			img{
+				width: 220px;
+				height: 175px;
+			}
+		}
+		
+		.nav{
+			margin-top: 50px;
+			border: none;
+			font-family: @code;
+			text-transform: lowercase;
+			font-size: 12px;
+			
+			li{
+				float: left;
+				position: relative;
+				margin: 0px 5px;
+				background: @menu-background;
+				.border-radius(5px);
+				cursor: pointer;
+				.boxShadow(2px,2px,5px,0,rgba(0,0,0,0.25));
+			
+				a {
+					color: lighten(@menu-background, 40%);
+					.textShadow(1px,1px,0,rgba(0,0,0,0.4));
+
+					&:hover, &:focus {
+						color: darken(@menu-hover, 50%);
+						.textShadow(1px,1px,0,rgba(0,0,0,0.2));
+					}
+				}
+
+				&:hover, &:focus {
+					background: @menu-hover;
+					color: darken(@menu-hover, 100%);
+				}
+
+				&:first-child {}
+
+				/*
+				plan your menus and drop-downs wisely.
+				*/
+				ul.sub-menu,
+				ul.children {
+					position: absolute;
+					display: none;
+					z-index: 8999;
+					margin: 0px;
+
+					li {
+						margin: 2px 0px;
+						display: inline-block;
+
+						a {
+							padding-left: 10px;
+							display: block;
+							width: 120px;
+
+							&:hover,
+							&:focus {}
+
+							&:link {}
+						}
+
+						&:first-child{
+							margin-top: 4px;
+						}
+
+						&:last-child {
+							a{}
+						}
+
+						/*
+						if you need to go deeper, go nuts
+						just remember deeper menus suck
+						for usability. k, bai.
+						*/
+						ul {}
+					}
+
+					/* highlight sub-menu current page */
+					li.current-menu-item,
+					li.current_page_item,
+					li.current-page-ancestor {
+						background: @menu-current;
+						a {
+							color: lighten(@menu-current,40%);
+						}
+					}
+				}
+
+				/* showing sub-menus */
+				&:hover ul {
+					top: auto;
+					display: inline-block;
+				}
+
+			} /* end .menu ul li */
+
+			/* highlight current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				background: @menu-current;
+				a {
+					color: lighten(@menu-current,40%);
+				}
+			}  /* end current highlighters */
+		}
+		
+		.nav>li:last-child {
+			background: @menu-special;
+			a {
+				color: lighten(@menu-special,40%);
+			}
+			
+			&:hover{
+				background: darken(@menu-special,10%);
+				a {
+					color: lighten(@menu-special,20%);
+				}
+			}
+		}
+	}
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+	.widgettitle {
+		margin-bottom: 10px;
+	}
+
+	.widget {
+		padding: 0 10px;
+		margin: 2.2em 0;
+
+		&:first-child{
+			margin: 0;
+		}
+		ul {
+			li {
+				margin-bottom: 0.75em;
+
+				&:first-child {}
+				&:last-child {}
+				a {}
+				/* deep nesting */
+
+				ul {
+					margin-top: 0.75em;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+#inner-partner{
+	.widget{
+		padding: 0px;
+		margin-bottom: 15px;
+		.widgettitle{
+			margin:0px 0px 5px 0px;
+		}
+	}
+	
+	#main-partner{ 
+		min-height: 30px;
+	}
+	
+	#other-partner{
+		text-align: right;
+	}
+}
+
+#highlight{
+	height: 250px;
+	background: @tomatoe-red;
+	#inner-highlight{
+		margin-top: 10px;
+	}
+	
+	.highlight-control{
+		height: 70px;
+		margin-top: 60px;
+		margin-bottom: 60px;
+		display: block;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+		&.left{
+			background-image: url(../images/slider-left.png);
+		}
+		&.right{
+			background-image: url(../images/slider-right.png);
+		}
+	}
+	
+	.highlight-boxholder{
+		overflow: hidden;
+		ul{
+			position: relative;
+			height: 200px;
+			overflow: hidden;
+			right: 0px;
+			margin: 0px auto;
+			.highlight-box{
+				overflow: hidden;
+				white-space: nowrap;
+				width: 182px;
+				height: 190px;
+				background: @white;
+				.border-radius(5px);
+				.boxShadow(2px,2px,0,0,rgba(0,0,0,0.3));
+				margin: 0px 10px;
+				display: inline-block;
+				
+				.highlight-photo{
+					width: 100%;
+					height: 120px;
+					background: #000;
+					overflow: hidden;
+					
+					img{
+						max-height: 200px;
+						max-width: 300px;
+					}
+				}
+
+				.highlight-title{
+					width: 100%;
+					height: 30px;
+					font-size: 14px;
+					text-align: center;
+					.h2;
+					line-height: 30px;
+					margin: 0px;
+				}
+				
+				.highlight-subtitle{
+					width: 100%;
+					height: 20px;
+					line-height: 20px;
+					text-transform: none;
+					font-family: @code;
+					margin: 0px;
+					text-align: center;
+				}
+				
+				.highlight-more{
+					width: 100%;
+					height: 20px;
+					line-height: 20px;
+					text-align: center;
+					font-family: @large;
+					font-size: 14px;
+					a{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+	/* links widget */
+	.widget_links {}
+	.widget_links ul {}
+	.widget_links ul li {}
+	.widget_links ul li a {}
+
+	/* meta widget */
+	.widget_meta {}
+	.widget_meta ul {}
+	.widget_meta ul li {}
+	.widget_meta ul li a {}
+
+	/* pages widget */
+	.widget_pages {}
+	.widget_pages ul {}
+	.widget_pages ul li {}
+	.widget_pages ul li a {}
+
+	/* recent-posts widget */
+	.widget_recent_entries {}
+	.widget_recent_entries ul {}
+	.widget_recent_entries ul li {}
+	.widget_recent_entries ul li a {}
+
+	/* archives widget */
+	.widget_archive {}
+	.widget_archive ul {}
+	.widget_archive ul li {}
+	.widget_archive ul li a {}
+	.widget_archive select {}
+	.widget_archive option {}
+
+	/* tag-cloud widget */
+	.widget_links {}
+	.widget_links li:after {}
+	.widget_links li:before {}
+	.widget_tag_cloud {}
+	.widget_tag_cloud a {}
+	.widget_tag_cloud a:after {}
+	.widget_tag_cloud a:before {}
+
+	/* calendar widget */
+	.widget_calendar {}
+	#calendar_wrap {}
+	#calendar_wrap th {}
+	#calendar_wrap td {}
+	#wp-calendar tr td {}
+	#wp-calendar caption {}
+	#wp-calendar a {}
+	#wp-calendar #today {}
+	#wp-calendar #prev {}
+	#wp-calendar #next {}
+	#wp-calendar #next a {}
+	#wp-calendar #prev a {}
+
+	/* category widget */
+	.widget_categories {}
+	.widget_categories ul {}
+	.widget_categories ul li {}
+	.widget_categories ul ul.children {}
+	.widget_categories a {}
+	.widget_categories select{}
+	.widget_categories select#cat {}
+	.widget_categories select.postform {}
+	.widget_categories option {}
+	.widget_categories .level-0 {}
+	.widget_categories .level-1 {}
+	.widget_categories .level-2 {}
+	.widget_categories .level-3 {}
+
+	/* recent-comments widget */
+	.recentcomments {}
+	#recentcomments {}
+	#recentcomments li {}
+	#recentcomments li a {}
+	.widget_recent_comments {}
+
+	/* search widget */
+	#searchform {}
+	.widget_search {
+		input[type='text']{
+			width: 100%;
+			padding: 3px;
+			color: lighten(@black,20%);
+		}
+		input[type='submit']{
+			color: rgba(255,255,255,0.8);
+			.textShadow(1px,1px,0,rgba(0,0,0,0.5));
+			.border-radius(3px);
+			margin-top: 5px;
+			padding: 6px 15px;
+			.css-gradient(#af1c1c,#700808);
+			border: none;
+			&:active{
+				.textShadow(-1px,-1px,0,rgba(0,0,0,0.5));
+				.css-gradient(#700808,#af1c1c);
+			}
+		}
+	}
+	.screen-reader-text {
+	}
+
+	/* text widget */
+	.textwidget {}
+	.widget_text {}
+	.textwidget p {}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer {
+	nav {
+		li {
+			a {
+				&:hover {}
+			}
+			
+			&:hover{
+				.border-radius(5px);
+				background: darken(@secomp-red,5%);
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+
