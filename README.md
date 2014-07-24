@@ -1,3 +1,0 @@
-####
-SECOMP WORDPRESS THEME
-####
